@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git_branch: 'main', git_credentialsId: 'appifgfgg9', git_url: 'https://github.com/Sudhanvaav19/july-2025.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'echo "Building project..."'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo "Running tests..."'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploying app..."'
+            }
+        }
+    }
+}
