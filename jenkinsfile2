@@ -5,7 +5,8 @@ pipeline {
             steps {
                 sh 'chmod +x hello.sh'
                 sh './hello.sh'
-                sh 'mail has been sent successfully'
+                echo "Mail sent successfully"
+                
                 
             }
         }
