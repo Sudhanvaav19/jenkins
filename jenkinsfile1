@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git_branch: 'main', git_credentialsId: 'appifgfgg9', git_url: 'https://github.com/Sudhanvaav19/jenkins.git'
+                git_branch: 'main', 
+                git_credentialsId: 'appifgfgg9',
+                 git_url: 'https://github.com/Sudhanvaav19/jenkins.git'
             }
         }
         stage('Build') {
