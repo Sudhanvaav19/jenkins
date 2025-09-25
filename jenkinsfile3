@@ -5,6 +5,7 @@ pipeline{
             steps{
                 git branch: 'main', credentialsId: 'appifgfgg9', url: 'https://github.com/Sudhanvaav19/jenkins.git'
             }
+      }
         stage('Build'){
             steps{
             echo "Build succcessful"
