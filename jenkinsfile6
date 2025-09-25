@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    stages{
+        stage('checkout'){
+            steps{
+                git branch: 'main', credentialsId: 'appifgfgg9', url: 'https://github.com/Sudhanvaav19/jenkins.git'
+            }
+            steps('build'){
+                echo "Build completed"
+            }
+            steps('test'){
+                echo "Test completed"
+            }
+            steps('deploy'){
+                sh '''
+                chmod +x hello.sh
+                 ./hello.sh
+                 '''
+                 echo "Deploy completed"
+            }
+        }
+    }
+        
+    }
+}
