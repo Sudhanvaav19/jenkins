@@ -2,21 +2,33 @@ pipeline{
     agent any
     stages{
         stage('checkout'){
-            steps{
+            stage{
                 git branch: 'main', credentialsId: 'appifgfgg9', url: 'https://github.com/Sudhanvaav19/jenkins.git'
             }
-            steps('build'){
-                echo "Build completed"
+           
+            stage('build'){
+                steps{
+                    echo "Build completed"
+
+                }
+                
             }
-            steps('test'){
+            stage('test'){
+                steps{
                 echo "Test completed"
             }
-            steps('deploy'){
-                sh '''
+
+            }
+            stage('deploy'){
+                steps{
+                  sh '''
                 chmod +x hello.sh
                  ./hello.sh
                  '''
                  echo "Deploy completed"
+                }
+               
+                 
             }
         }
     }
