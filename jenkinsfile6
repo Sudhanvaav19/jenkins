@@ -1,11 +1,11 @@
-pipeline{
+pipeline {
     agent any
     stages{
-        stage('checkout'){
+        stage('checkout') {
             steps{
                 git branch: 'main', credentialsId: 'appifgfgg9', url: 'https://github.com/Sudhanvaav19/jenkins.git'
             }
-           
+        }   
         stage('build'){
                 steps{
                     echo "Build completed"
